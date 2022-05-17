@@ -7,7 +7,7 @@
   }
 
 .container {
-    display: flex;
+    display: grid;
     width: 100vw;
     height: 100vh;
     background-color: rgb(218, 217, 217);
@@ -39,8 +39,30 @@
     font-weight: bolder;
 }
 
-/* Books */
+/* Pop-Up */
 
-#book {
+#popUp{
+    display: none;
+    justify-content: center;
+}
+
+.form-container {
     display: grid;
+    justify-content: center;
+    align-content:center;
+    width: 15rem;
+    height: 20rem;
+    background-color: darkseagreen;
+    border-radius: 1rem;
+}
+
+.form-container > div {
+    padding: 0.8rem;
+    align-content: center;
+}
+
+#addBtn {
+    font-size: medium;
+    padding: 0.5rem;
+    margin-left: 1.7rem;
 }
