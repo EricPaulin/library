@@ -12,11 +12,23 @@
     <div class="container">
         <div id="header">
             <div class="title">Library</div>
-            <button class = "btn">+</button>
+            <button class = "plusBtn">+</button>
         </div>
-        <div id="book">
-            
+        <div id="popUp">
+            <form id="form" action="./script.js">
+                <legend>Add Book</legend>
+                <div id="userInput">
+                    <div><input type="text" id="title" name="title"></div>
+                    <div><input type="text" id="author" name="author"></div>
+                    <div><input type="text" id="pageCount" name="pageCount"></div>
+                </div>
+                <div id="checkBox">
+                    <div><label>Already Read? </label></div><input type="checkbox" id="read" name="read" value="no"></div>
+                </div>
+                <button type="submit" form="form" id="addBtn">Add</button>
+            </form>
         </div>
+        <div id="library-container"></div>
     </div>
 </body>
 </html>
