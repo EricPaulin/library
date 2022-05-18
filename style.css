@@ -6,11 +6,31 @@
     font-family: 'Courier New', Courier, monospace;
   }
 
+/* Grid Container + Card */ 
+
 .container {
     display: grid;
+    overflow: auto;
+    resize: vertical;
+    justify-content: center;
+
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     background-color: rgb(218, 217, 217);
+
+    /*grid-template-rows: repeat(3, 20rem);*/
+    grid-template-columns: repeat(auto-fill, clamp(13rem, 15rem, 22rem));
+
+    gap: 7rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.card {
+    height: 20rem;
+    background-color: darkcyan;
+    border: 1px solid black;
+    border-radius: 1rem;   
 }
 
 /* Header */
@@ -44,6 +64,7 @@
 #popUp{
     display: none;
     justify-content: center;
+    position: absolute;
 }
 
 .form-container {

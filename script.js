@@ -47,7 +47,7 @@ function addBookToLibrary() {
 
 /* Creates Book Card Visual */
 function bookCard() {
-    const display = document.getElementById('full-library');
+    const display = document.getElementById('book-list');
     const books = document.querySelectorAll('.book');
     books.forEach(book => display.removeChild(book));
 

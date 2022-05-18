@@ -9,25 +9,32 @@
     <title>Library</title>
 </head>
 <body>
+    <div id="header">
+        <div class="title">Library</div>
+        <button class= "plusBtn" input id="add">+</button>
+    </div>
     <div class="container">
-        <div id="header">
-            <div class="title">Library</div>
-            <button class= "plusBtn" input id="add">+</button>
-        </div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
         <div id="popUp">
             <form action="./script.js" method="get">
                 <div class="form-container">
-                    <p>Add Book<p>
+                    <p>Add Book</p>
                     <div><label for="title">Title</label></div>
                     <input type="text" name="title" required>
-
+                        
                     <div><label for="author">Author</label></div>
                     <input type="text" name="author" required>
-
+                        
                     <div><label for="pageCount">Page Count</label></div>
                     <input type="tel" name="pageCount" required>
-
-                    
+                        
                     <div>
                         <label for="read">Read?</label>
                         <input type="checkbox" name="read">
