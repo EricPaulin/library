@@ -76,3 +76,4 @@ window.onclick = function (event) {
 
 document.getElementById("add").onclick = openPopup;
 document.getElementById("window").onclick = closePopup;
+
