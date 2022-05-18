@@ -14,7 +14,13 @@
         <button class= "plusBtn" input id="add">+</button>
     </div>
     <div class="container">
-        <div class="card"></div>
+        <div class="card">
+            <div class="book-title">A Dream of Spring</div>
+            <div class="book-author">George R.R Martin</div>
+            <div class="book-pageCount">1200 Pages</div>
+            <div><button id="cardBtn">Read</button></div>
+            <div><button id="cardBtn">Delete</button></div>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>
@@ -33,7 +39,7 @@
                     <input type="text" name="author" required>
                         
                     <div><label for="pageCount">Page Count</label></div>
-                    <input type="tel" name="pageCount" required>
+                    <input type="number" name="pageCount" required>
                         
                     <div>
                         <label for="read">Read?</label>

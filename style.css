@@ -1,17 +1,21 @@
+@font-face {
+    font-family: special-elite;
+    src: url(./fonts/SpecialElite-Regular.ttf);
+}
+
 * {
     /* Resets Browser's Padding and Margin */
     margin: 0;
     padding: 0;
 
     font-family: 'Courier New', Courier, monospace;
-  }
+}
 
-/* Grid Container + Card */ 
+/* Grid Container */ 
 
 .container {
     display: grid;
     overflow: auto;
-    resize: vertical;
     justify-content: center;
 
     width: 100vw;
@@ -26,12 +30,39 @@
     padding-bottom: 3.5rem;
 }
 
+/* Card Info */
+
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 20rem;
     background-color: darkcyan;
     border: 1px solid black;
-    border-radius: 1rem;   
+    border-radius: 1rem; 
+    background-image: url(./images/old_paper.webp);
 }
+
+.card > div {
+    padding: 0.7rem;
+    font-family: special-elite;
+}
+
+#cardBtn {
+  background-color: #fbeee0;
+  border: 0.15rem solid #422800;
+  border-radius: 0.5rem;
+  color: #422800;
+  cursor: pointer;
+  font-weight: medium;
+  padding: 0.3rem;
+}
+
+#cardBtn:hover {
+  background-color: rgb(255, 255, 255);
+}
+
 
 /* Header */
 
@@ -57,7 +88,14 @@
     border-radius: 2rem;
     cursor: pointer;
     font-weight: bolder;
+    background-color: #fbeee0;
 }
+
+.plusBtn:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
 
 /* Pop-Up */
 
@@ -86,4 +124,5 @@
     font-size: medium;
     padding: 0.5rem;
     margin-left: 1.7rem;
+    cursor: pointer;
 }
