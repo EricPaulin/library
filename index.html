@@ -14,41 +14,30 @@
         <button class= "plusBtn" input id="add">+</button>
     </div>
     <div class="container">
-        <div class="card">
-            <div class="book-title">A Dream of Spring</div>
-            <div class="book-author">George R.R Martin</div>
-            <div class="book-pageCount">1200 Pages</div>
-            <div><button id="cardBtn">Read</button></div>
-            <div><button id="cardBtn">Delete</button></div>
-        </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="books"></div>
+
+
         <div id="popUp">
-            <form action="./script.js" method="get">
+            <form action="" method="get" id="form" class="add-book">
                 <div class="form-container">
                     <div class="add-title">Add Book</div>
                     <div><label for="title">Title</label></div>
-                    <input type="text" name="title" required>
+                    <input type="text" name="title" class="book-input" required>
                         
                     <div><label for="author">Author</label></div>
-                    <input type="text" name="author" required>
+                    <input type="text" name="author" class="book-input" required>
                         
                     <div><label for="pageCount">Page Count</label></div>
-                    <input type="number" name="pageCount" required>
+                    <input type="number" name="pageCount" class="book-input" required>
                         
                     <div>
                         <label for="read">Read?</label>
-                        <input type="checkbox" name="read">
-                        <button type="submit" id="addBtn">Add</button>
+                        <input type="checkbox" name="read" class="book-input">
+                        <button type="submit" id="addBtn" class="add-book-btn">Add</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
+     </div>
 </body>
 </html>
