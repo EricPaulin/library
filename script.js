@@ -59,21 +59,12 @@ function bookCard() {
 
 /* Opens and Closes the Popup */
 
+document.getElementById("add").onclick = openPopup;
+document.getElementById("cancelBtn").onclick = closePopup;
+
 function openPopup() {
     document.getElementById("popUp").style.display = "grid";
 }
-
 function closePopup() {
     document.getElementById("popUp").style.display = "none";
 }
-
-window.onclick = function (event) {
-    let modal = document.getElementById('popUp');
-    if (event.target == modal) {
-      closePopup();
-    }
-}
-
-document.getElementById("add").onclick = openPopup;
-document.getElementById("window").onclick = closePopup;
-

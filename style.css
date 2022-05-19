@@ -107,8 +107,27 @@
 
 #popUp{
     display: none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: 15rem;
+    height: 20rem;
+    margin-left: -7rem;
+    margin-top: -10rem;
+}
+
+.form-top {
+    display: flex;
     justify-content: center;
-    position: absolute;
+    align-items: baseline;
+    gap: 5rem;
+}
+
+#cancelBtn {
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    background-color: darkseagreen;
 }
 
 .form-container {
