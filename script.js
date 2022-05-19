@@ -1,19 +1,21 @@
-/* Pre ES6 Prototyping */
+/* Opens and Closes the Popup */
 
-/*function book(title, author, pageCount, read) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.read = read;
+document.getElementById("add").onclick = openPopup;
+
+function openPopup() {
+    document.getElementById("popUp").style.display = "grid";
 }
 
-book.prototype.info = function(title, author, pageCount) {
-    console.log(`${this.title} is by author ${this.author} and has a page count of ${this.pageCount}`)
+function closePopup() {
+    document.getElementById("popUp").style.display = "none";
 }
 
-
-const book1 = new book("A Song of Ice and Fire", "George R.R Martin", 1400, false);
-//book1.info();     */
+ 
+window.addEventListener('mouseup', function(event) {
+    if (!event.target.closest("#popUp")) {
+        closePopup();
+    }
+});
 
 
 /* Post ES6 "syntactical sugar" classes */
@@ -54,17 +56,4 @@ function bookCard() {
     for (var i = 0; i < myLibrary.length; i++){
         createCard(myLibrary[i]);
     }
-}
-
-
-/* Opens and Closes the Popup */
-
-document.getElementById("add").onclick = openPopup;
-document.getElementById("cancelBtn").onclick = closePopup;
-
-function openPopup() {
-    document.getElementById("popUp").style.display = "grid";
-}
-function closePopup() {
-    document.getElementById("popUp").style.display = "none";
 }
