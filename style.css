@@ -11,6 +11,50 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* Pop-Up */
+
+#popUp{
+    display: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 15rem;
+    height: 20rem;
+    margin-left: -7rem;
+    margin-top: -10rem;
+}
+
+.add-title{
+    position: relative;
+    top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.form-container {
+    display: grid;
+    justify-content: center;
+    align-content:center;
+    width: 15rem;
+    height: 20rem;
+    background-color: darkseagreen;
+    border-radius: 1rem;
+    border: 0.2rem outset goldenrod;
+}
+
+.form-container > div {
+    padding: 0.8rem;
+    align-content: center;
+}
+
+#addBtn {
+    font-size: medium;
+    padding: 0.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+}
+
 /* Header */
 
 #header {
@@ -56,6 +100,13 @@
     overflow: auto;
     justify-content: center;
 
+}
+
+.books-list {
+    display: grid;
+    overflow: auto;
+    justify-content: center;
+
     width: 100vw;
     height: 90vh;
     background-color: #faf0c7;
@@ -76,17 +127,16 @@
     align-items: center;
     height: 20rem;
     border: 0.22rem solid black;
-    /*border: 0.22rem solid #822634;*/
     border-radius: 1rem; 
     background-image: url(./images/old_paper.webp);
 }
 
-.card > div {
+.card > * {
     padding: 0.7rem;
     font-family: special-elite;
 }
 
-#cardBtn {
+.readBtn {
   background-color: #fbeee0;
   border: 0.15rem solid #422800;
   border-radius: 0.5rem;
@@ -94,52 +144,16 @@
   cursor: pointer;
   font-weight: medium;
   padding: 0.3rem;
+  margin-top: 1rem;
 }
 
-#cardBtn:hover {
-  background-color: rgb(255, 255, 255);
-}
-
-/* Pop-Up */
-
-#popUp{
-    display: none;
-    position:absolute;
-    top:50%;
-    left:50%;
-    width: 15rem;
-    height: 20rem;
-    margin-left: -7rem;
-    margin-top: -10rem;
-}
-
-.add-title{
-    position: relative;
-    top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
-}
-
-.form-container {
-    display: grid;
-    justify-content: center;
-    align-content:center;
-    width: 15rem;
-    height: 20rem;
-    background-color: darkseagreen;
-    border-radius: 1rem;
-    border: 0.2rem outset goldenrod;
-}
-
-.form-container > div {
-    padding: 0.8rem;
-    align-content: center;
-}
-
-#addBtn {
-    font-size: medium;
-    padding: 0.5rem;
-    margin-left: 1.7rem;
+.deleteBtn {
+    background-color: #fbeee0;
+    border: 0.15rem solid black;
+    border-radius: 0.5rem;
+    color: black;
     cursor: pointer;
+    font-weight: medium;
+    padding: 0.3rem;
+    margin-top: 1rem;
 }

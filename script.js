@@ -20,7 +20,7 @@ window.addEventListener('mouseup', function(event) {
 
 /* Post ES6 "syntactical sugar" classes */
 
-class book {
+class Book {
     constructor(title, author, pageCount, read) {
         this.title = title;
         this.author = author;
@@ -29,7 +29,7 @@ class book {
     }
 }
 
-/* Array storing each book + valriable for temp storing current new book */
+/* Array storing each book */
 let myLibrary = [];
 
 /* Add Book to Library (pushes it to end of array) */
@@ -44,10 +44,10 @@ function addBookToLibrary() {
         myLibrary.push(book)
 }
 
-const books = document.querySelector('.books')
-const addBook = document.querySelector('.add-book')
-const plusBtn = document.querySelector('.plusBtn')  
-const addBookBtn = document.querySelector('.add-book-btn')
+const books = document.querySelector('.books');
+const addBook = document.querySelector('.add-book');
+const plusBtn = document.querySelector('.plusBtn');
+const addBookBtn = document.querySelector('.add-book-btn');
 
 /* Form (Adding and Printing) */
 
@@ -64,15 +64,19 @@ addBookBtn.addEventListener('click', () => {
     }
     addBookToLibrary();
     printLibrary();
-   // addBook.style.display = 'none';
+    addBook.style.display = 'none';
+})
+
+addBook.addEventListener("submit", (e) => {
+    e.preventDefault();
 })
 
 function printLibrary() {
-    const booksListInitial = document.querySelector('.container');
+    const booksListInitial = document.querySelector('.books-list');
     books.removeChild(booksListInitial);
 
     const booksListAfter = document.createElement('div');
-    booksListAfter.classList.add('.container');
+    booksListAfter.classList.add('books-list');
 
     for (let unit of myLibrary) {
         const card = document.createElement('div');
@@ -82,6 +86,7 @@ function printLibrary() {
         const readBtn = document.createElement('button');
         const deleteBtn = document.createElement('button');
 
+        /* Making and Adding to a new Card */
         card.classList.add('card');
         bookTitle.classList.add('bookTitle');
         bookAuthor.classList.add('bookAuthor');
@@ -91,14 +96,16 @@ function printLibrary() {
 
         bookTitle.textContent = unit.title;
         bookAuthor.textContent = unit.author;
-        bookPageCount.textContent = unit.pageCount + ' pages';
-        let bookStatus = 'Not Read';
-        readBtn.style.backgroundColor = '#822634';
-        if (unit.bookStatus) {
-            bookStatus = 'Read';
-            readBtn.style.backgroundColor = 'black';
+        bookPageCount.textContent = unit.pageCount + ' Pages';
+
+        let readStatus = 'Read';
+        card.style.borderColor = 'black';
+        if (unit.readStatus) {
+            readStatus = 'Not Read';
+            card.style.borderColor = '#822634';
         }
-        readBtn.textContent = bookStatus;
+        readBtn.textContent = readStatus;
+
         deleteBtn.textContent = 'Delete';
 
         card.appendChild(bookTitle);
@@ -106,12 +113,14 @@ function printLibrary() {
         card.appendChild(bookPageCount);
         card.appendChild(readBtn);
         card.appendChild(deleteBtn);
+        booksListAfter.appendChild(card);
         console.log(unit)
     }
 
     books.appendChild(booksListAfter);
     readBtnEvents();
     deleteBtnEvents();
+    addBook.style.display = 'none';
 }
 
 printLibrary();
@@ -119,23 +128,23 @@ printLibrary();
 /* Functions for Read + Delete */
 
 function readBtnEvents() {
-    const readBtns = document.querySelectorAll('.readBtn');
-    let readBtnArray = Array.from(readBtns)
+    const readBtn = document.querySelectorAll('.readBtn');
+    let readBtnArray = Array.from(readBtn);
 
     readBtnArray.forEach((button) => {
         button.addEventListener('click', () => {
-            myLibrary[readBtnArray.indexOf(button)].read = !(myLibrary[readBtnArray.indexOf(button).read])
+            myLibrary[readBtnArray.indexOf(button)].readStatus = !(myLibrary[readBtnArray.indexOf(button).readStatus])
             printLibrary();
         });
     });
 }
 
 function deleteBtnEvents() {
-    const deleteBtns = document.querySelectorAll('.deleteBtn');
-    let deleteBtnsArray = Array.from(deleteBtns);
-    deleteBtnsArray.forEach((button) => {
+    const deleteBtn = document.querySelectorAll('.deleteBtn');
+    let deleteBtnArray = Array.from(deleteBtn);
+    deleteBtnArray.forEach((button) => {
         button.addEventListener('click', () => {
-            myLibrary.splice(deleteBtnsArray.indexOf(button), 1);
+            myLibrary.splice(deleteBtnArray.indexOf(button), 1);
         });
     });
 }

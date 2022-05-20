@@ -9,34 +9,36 @@
     <title>Library</title>
 </head>
 <body>
+    <div id="popUp">
+        <form action="" method="get" id="form" class="add-book">
+            <div class="form-container">
+                <div class="add-title">Add Book</div>
+                <div><label for="title">Title</label></div>
+                <input type="text" name="title" class="book-input" required>
+                    
+                <div><label for="author">Author</label></div>
+                <input type="text" name="author" class="book-input" required>
+                    
+                <div><label for="pageCount">Page Count</label></div>
+                <input type="number" name="pageCount" class="book-input" required>
+                    
+                <div>
+                    <label for="read">Read?</label>
+                    <input type="checkbox" name="read" class="book-input">
+                    <button type="submit" id="addBtn" class="add-book-btn">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div id="header">
         <div class="title">Library</div>
         <button class= "plusBtn" input id="add">+</button>
     </div>
+
     <div class="container">
-        <div class="books"></div>
-
-
-        <div id="popUp">
-            <form action="" method="get" id="form" class="add-book">
-                <div class="form-container">
-                    <div class="add-title">Add Book</div>
-                    <div><label for="title">Title</label></div>
-                    <input type="text" name="title" class="book-input" required>
-                        
-                    <div><label for="author">Author</label></div>
-                    <input type="text" name="author" class="book-input" required>
-                        
-                    <div><label for="pageCount">Page Count</label></div>
-                    <input type="number" name="pageCount" class="book-input" required>
-                        
-                    <div>
-                        <label for="read">Read?</label>
-                        <input type="checkbox" name="read" class="book-input">
-                        <button type="submit" id="addBtn" class="add-book-btn">Add</button>
-                    </div>
-                </div>
-            </form>
+        <div class="books">
+            <div class="books-list"></div>
         </div>
      </div>
 </body>
