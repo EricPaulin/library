@@ -98,14 +98,14 @@ function printLibrary() {
         bookAuthor.textContent = unit.author;
         bookPageCount.textContent = unit.pageCount + ' Pages';
 
-        let readStatus = 'Read';
-        card.style.borderColor = 'black';
-        if (unit.readStatus) {
-            readStatus = 'Not Read';
-            card.style.borderColor = '#822634';
+        let read = 'Not Read';
+        card.style.borderColor = '#822634';
+        if (unit.read) {
+            read = 'Read';
+            card.style.borderColor = 'black';
         }
-        readBtn.textContent = readStatus;
-
+        
+        readBtn.textContent = read;
         deleteBtn.textContent = 'Delete';
 
         card.appendChild(bookTitle);
@@ -114,12 +114,12 @@ function printLibrary() {
         card.appendChild(readBtn);
         card.appendChild(deleteBtn);
         booksListAfter.appendChild(card);
-        console.log(unit)
+        console.log(unit);
     }
 
     books.appendChild(booksListAfter);
-    readBtnEvents();
     deleteBtnEvents();
+    readBtnEvents();
     addBook.style.display = 'none';
 }
 
@@ -133,7 +133,8 @@ function readBtnEvents() {
 
     readBtnArray.forEach((button) => {
         button.addEventListener('click', () => {
-            myLibrary[readBtnArray.indexOf(button)].readStatus = !(myLibrary[readBtnArray.indexOf(button).readStatus])
+            myLibrary[readBtnArray.indexOf(button)].read =
+            !(myLibrary[readBtnArray.indexOf(button)].read)
             printLibrary();
         });
     });
@@ -145,6 +146,7 @@ function deleteBtnEvents() {
     deleteBtnArray.forEach((button) => {
         button.addEventListener('click', () => {
             myLibrary.splice(deleteBtnArray.indexOf(button), 1);
+            printLibrary();
         });
     });
 }
