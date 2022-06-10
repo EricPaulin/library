@@ -4,4 +4,4 @@ Library database where users can store books they read as well as read status of
 
 Made with: HTML5, CSS, and JavaScript
 
-Focus: Grid, Classes, Form Validation, Local Storage
+Focus: Grid, Classes, Form Validation, (local) Storage
